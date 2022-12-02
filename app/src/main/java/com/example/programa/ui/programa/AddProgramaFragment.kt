@@ -56,18 +56,16 @@ class AddProgramaFragment : Fragment() {
     private fun addPrograma() {
 
         val nombre=binding.etNombre.text.toString()
-        val audiencia=binding.et.text.toString()
-        val telefono=binding.etTelefono.text.toString()
+        val audiencia=binding.etAudiencia.text.toString().toDouble()
+        val canal=binding.etCanal.text.toString().toDouble()
+        val presentadores=binding.etPresentadores.text.toString()
         val web=binding.etWeb.text.toString()
-        val latitud= binding.tvLatitud.text.toString().toDouble()
 
         if(nombre.isNotEmpty()){ // si puedo crear un lugar
-            val programa= Programa("",nombre,correo,telefono,web,latitud,longitud,altura,rutaAudio,rutaImagen)
-            lugarViewModel.saveLugar(programa)
-            Toast.makeText(requireContext(), getString(R.string.msg_lugar_added), Toast.LENGTH_SHORT).show()
-            findNavController().navigate(R.id.action_addLugarFragment_to_nav_lugar)
+            val programa= Programa("",nombre,audiencia,canal,presentadores,web)
+            programaViewModel.savePrograma(programa)
+            findNavController().navigate(R.id.action_addProgramaFragment_to_nav_home)
         }else{ //mensaje de error
-            Toast.makeText(requireContext(), getString(R.string.msg_data), Toast.LENGTH_SHORT).show()
         }
     }
 

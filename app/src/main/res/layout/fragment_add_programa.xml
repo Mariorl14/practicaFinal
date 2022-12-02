@@ -28,7 +28,7 @@
                 android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/etCorreo"
+                android:id="@+id/etAudiencia"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -36,12 +36,20 @@
                 android:inputType="textEmailAddress" />
 
             <EditText
-                android:id="@+id/etTelefono"
+                android:id="@+id/etCanal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="@string/msg_telefono"
                 android:inputType="phone" />
+
+            <EditText
+                android:id="@+id/etPresentadores"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/msg_web"
+                android:inputType="textPersonName" />
 
             <EditText
                 android:id="@+id/etWeb"
